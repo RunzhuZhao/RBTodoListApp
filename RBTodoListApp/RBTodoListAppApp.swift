@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct RBTodoListAppApp: App {
+    @StateObject var viewModel: RBTodoListViewModel = RBTodoListViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                RBTodoListView()
+            }
+            .environmentObject(viewModel)
         }
     }
 }
